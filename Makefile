@@ -176,7 +176,6 @@ ULIBS =
 
 RULESPATH = $(CHIBIOS)/os/common/startup/ARMCMx/compilers/GCC/mk
 include $(RULESPATH)/arm-none-eabi.mk
-include debug/memory.mk
 include $(RULESPATH)/rules.mk
 #
 # Common rules

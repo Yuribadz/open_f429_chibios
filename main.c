@@ -17,6 +17,8 @@
 #include "ch.h"
 #include "hal.h"
 #include "chprintf.h"
+
+static thread_t* supah;
 /*
  * Red LED blinker thread, times are in milliseconds.
  */
@@ -76,7 +78,7 @@ int main(void) {
 	palSetPadMode(GPIOF, 6U, PAL_MODE_OUTPUT_PUSHPULL);
 	palSetPadMode(GPIOF, 7U, PAL_MODE_OUTPUT_PUSHPULL);
 
-	chThdCreateStatic(waThread1, sizeof(waThread1),
+	supah = chThdCreateStatic(waThread1, sizeof(waThread1),
 	NORMALPRIO + 10, Thread1, NULL);
 	chThdCreateStatic(waThread2, sizeof(waThread2),
 	NORMALPRIO + 10, Thread2, NULL);
