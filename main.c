@@ -40,7 +40,6 @@ static THD_FUNCTION(Thread1, arg) {
  */
 static THD_WORKING_AREA(waThread2, 128);
 static THD_FUNCTION(Thread2, arg) {
-
 	(void) arg;
 	chRegSetThreadName("blinker2");
 	while (true) {
