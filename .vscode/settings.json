@@ -1,0 +1,10 @@
+{
+    "lldb.showDisassembly": "auto",
+    "lldb.dereferencePointers": true,
+    "lldb.consoleMode": "commands",
+    "editor.insertSpaces": true,
+    "files.associations": {
+        "*.h": "c",
+        "*.inc": "c"
+    }
+}
