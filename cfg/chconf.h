@@ -648,6 +648,8 @@
 #define CH_DBG_THREADS_PROFILING            FALSE
 #endif
 
+#define CHPRINTF_USE_FLOAT                  TRUE
+
 /** @} */
 
 /*===========================================================================*/

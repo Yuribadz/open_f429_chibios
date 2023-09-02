@@ -16,16 +16,15 @@
 
 #include "ch.h"
 #include "hal.h"
-#include "chprintf.h"
+#include "debug_print.h"
 
-static thread_t* supah;
 /*
  * Red LED blinker thread, times are in milliseconds.
  */
 static THD_WORKING_AREA(waThread1, 128);
-static THD_FUNCTION(Thread1, arg) {
-
-	(void) arg;
+static THD_FUNCTION(Thread1, arg)
+{
+	(void)arg;
 	chRegSetThreadName("blinker1");
 	while (true) {
 		palClearPad(GPIOF, 6U);
@@ -39,8 +38,9 @@ static THD_FUNCTION(Thread1, arg) {
  * Green LED blinker thread, times are in milliseconds.
  */
 static THD_WORKING_AREA(waThread2, 128);
-static THD_FUNCTION(Thread2, arg) {
-	(void) arg;
+static THD_FUNCTION(Thread2, arg)
+{
+	(void)arg;
 	chRegSetThreadName("blinker2");
 	while (true) {
 		palClearPad(GPIOF, 7U);
@@ -57,36 +57,34 @@ static THD_FUNCTION(Thread2, arg) {
 /*
  * Application entry point.
  */
-int main(void) {
-
+int main(void)
+{
 	/*
-	 * System initializations.
-	 * - HAL initialization, this also initializes the configured device drivers
-	 *   and performs the board-specific initializations.
-	 * - Kernel initialization, the main() function becomes a thread and the
-	 *   RTOS is active.
-	 */
+     * System initializations.
+     * - HAL initialization, this also initializes the configured device drivers
+     *   and performs the board-specific initializations.
+     * - Kernel initialization, the main() function becomes a thread and the
+     *   RTOS is active.
+     */
 	halInit();
 	chSysInit();
-	const SerialConfig config = { .speed = 38400 };
-	BaseSequentialStream *bsp = (BaseSequentialStream*) &SD1;
-	sdStart(&SD1, &config);
+    init_debug();
 	/*
-	 * Creating the blinker threads.
-	 */
+     * Creating the blinker threads.
+     */
 	palSetPadMode(GPIOF, 6U, PAL_MODE_OUTPUT_PUSHPULL);
 	palSetPadMode(GPIOF, 7U, PAL_MODE_OUTPUT_PUSHPULL);
 
-	supah = chThdCreateStatic(waThread1, sizeof(waThread1),
-	NORMALPRIO + 10, Thread1, NULL);
-	chThdCreateStatic(waThread2, sizeof(waThread2),
-	NORMALPRIO + 10, Thread2, NULL);
+	chThdCreateStatic(waThread1, sizeof(waThread1), NORMALPRIO + 10,
+			  Thread1, NULL);
+	chThdCreateStatic(waThread2, sizeof(waThread2), NORMALPRIO + 10,
+			  Thread2, NULL);
 
 	/*
-	 * Normal main() thread activity, spawning shells.
-	 */
+     * Normal main() thread activity, spawning shells.
+     */
 	while (true) {
+        print_hal_conf();
 		chThdSleepMilliseconds(500);
-		chprintf(bsp, "Hello World %dst test!\r\n", 1);
 	}
 }
