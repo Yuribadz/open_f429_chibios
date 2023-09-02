@@ -33,7 +33,7 @@ TODO list:
 - ChibiOS has wide range of tools to import your configuration from STM32CUBE generated project. Use chibios2111\community\tools\mx2board.py or any other script.
 - Most configuration is stored in board.c and board.h file and config folder of project.
 - ChibiOS has extensive documentation.
-- Adjust configuration to your needs. For current project template chibios2111/os/hal/boards/ST_STM32F429I_DISCOVERY was used. Discovery board is LQFP176 MCU with 176 pins, while Discovery has 144 pins. Additional pins can handle more peripherials.
+- Adjust configuration to your needs. For current project template chibios2111/os/hal/boards/ST_STM32F429I_DISCOVERY was used. OpenF429IGT6 Core board is LQFP176 MCU with 176 pins, while Discovery has 144 pins. Additional pins can handle more peripherials.
 - General recomendation from ChibiOS documentation is to incrementally add small changes and test them.
 
 ## 3. Testing
