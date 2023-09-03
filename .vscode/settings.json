@@ -6,5 +6,11 @@
     "files.associations": {
         "*.h": "c",
         "*.inc": "c"
-    }
+    },
+    "editor.rulers": [
+        {
+            "column": 80,
+            "color": "#19c639",
+        }
+    ]
 }
