@@ -6,7 +6,14 @@
     "configurations": [
         {
             "name": "open_f429",
+            "liveWatch": {
+                "enabled": true,
+                "samplesPerSecond": 4
+            },
             "cwd": "${workspaceFolder}",
+            "preLaunchCommands": [
+                "monitor speed 12000",
+            ],
             "serverpath": "C:/Program Files/SEGGER/JLink/JLinkGDBServerCL.exe",
             "interface": "swd",
             "executable": "./build/ch.elf",
