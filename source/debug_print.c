@@ -37,7 +37,6 @@ bool print_hal_conf(void)
 			     STM32_PLLSAIN_VALUE) /
 			    STM32_PLLSAIR_VALUE) /
 			   2;
-
 	chprintf(dbs, "LCD Clock frequency is %u MHz\r\n", lcdFreq);
 	return HAL_SUCCESS;
 }
