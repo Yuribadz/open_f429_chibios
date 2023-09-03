@@ -11,6 +11,7 @@
                 "samplesPerSecond": 4
             },
             "cwd": "${workspaceFolder}",
+            "preLaunchTask": "Build all",
             "preLaunchCommands": [
                 "monitor speed 12000",
             ],
