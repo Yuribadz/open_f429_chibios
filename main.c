@@ -18,6 +18,8 @@
 #include "hal.h"
 #include "debug_print.h"
 #include "swo_print.h"
+#include "thread_registry.h"
+#include "string.h"
 
 /*
  * Red LED blinker thread, times are in milliseconds.
@@ -76,17 +78,15 @@ int main(void)
 	palSetPadMode(GPIOF, 6U, PAL_MODE_OUTPUT_PUSHPULL);
 	palSetPadMode(GPIOF, 7U, PAL_MODE_OUTPUT_PUSHPULL);
 
-	chThdCreateStatic(waThread1, sizeof(waThread1), NORMALPRIO + 10,
+	blink1 = chThdCreateStatic(waThread1, sizeof(waThread1), NORMALPRIO + 10,
 			  Thread1, NULL);
-	chThdCreateStatic(waThread2, sizeof(waThread2), NORMALPRIO + 10,
+	blink2 = chThdCreateStatic(waThread2, sizeof(waThread2), NORMALPRIO + 10,
 			  Thread2, NULL);
-
+	print_hal_conf();
 	/*
      * Normal main() thread activity, spawning shells.
      */
 	while (true) {
-		print_hal_conf();
-		SWO_PrintString("Hello\r\n");
 		chThdSleepMilliseconds(500);
 	}
 }
