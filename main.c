@@ -68,7 +68,7 @@ int main(void)
      */
 	halInit();
 	chSysInit();
-    init_debug();
+	init_debug();
 	/*
      * Creating the blinker threads.
      */
@@ -84,7 +84,7 @@ int main(void)
      * Normal main() thread activity, spawning shells.
      */
 	while (true) {
-        print_hal_conf();
+		print_hal_conf();
 		chThdSleepMilliseconds(500);
 	}
 }
