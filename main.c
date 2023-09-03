@@ -17,6 +17,7 @@
 #include "ch.h"
 #include "hal.h"
 #include "debug_print.h"
+#include "swo_print.h"
 
 /*
  * Red LED blinker thread, times are in milliseconds.
@@ -85,6 +86,7 @@ int main(void)
      */
 	while (true) {
 		print_hal_conf();
+		SWO_PrintString("Hello\r\n");
 		chThdSleepMilliseconds(500);
 	}
 }
