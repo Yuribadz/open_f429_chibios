@@ -1,0 +1,6 @@
+LEDSSRC := 
+LEDSINC :=
+
+
+ALLCSRC += $(LEDSSRC)
+ALLINC  += $(LEDSINC)
