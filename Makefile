@@ -113,8 +113,8 @@ include $(SOURCEDIR)/swo_debug/swo_debug.mk
 include $(SOURCEDIR)/periph/periph.mk
 include $(SOURCEDIR)/threads/threads.mk
 
-# Auto-build files in ./source recursively.
-include $(CHIBIOS)/tools/mk/autobuild.mk
+# Auto-build files in ./source recursively. DISABLED
+# include $(CHIBIOS)/tools/mk/autobuild.mk
 # Other files (optional).
 include $(CHIBIOS)/os/test/test.mk
 include $(CHIBIOS)/test/rt/rt_test.mk
