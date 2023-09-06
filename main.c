@@ -78,9 +78,9 @@ int main(void)
 	palSetPadMode(GPIOF, 6U, PAL_MODE_OUTPUT_PUSHPULL);
 	palSetPadMode(GPIOF, 7U, PAL_MODE_OUTPUT_PUSHPULL);
 
-	blink1 = chThdCreateStatic(waThread1, sizeof(waThread1), NORMALPRIO + 10,
+	led1_thread = chThdCreateStatic(waThread1, sizeof(waThread1), NORMALPRIO + 10,
 			  Thread1, NULL);
-	blink2 = chThdCreateStatic(waThread2, sizeof(waThread2), NORMALPRIO + 10,
+	led2_thread = chThdCreateStatic(waThread2, sizeof(waThread2), NORMALPRIO + 10,
 			  Thread2, NULL);
 	print_hal_conf();
 	/*
