@@ -4,7 +4,11 @@
             "name": "linux-arm-gcc",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/source/**"
+                "${workspaceFolder}/source/**",
+                "${workspaceFolder}/source/periph/**",
+                "${workspaceFolder}/source/debug_usart1/**",
+                "${workspaceFolder}/source/swo_debug/**",
+                "${workspaceFolder}/source/threads/**"
             ],
             "defines": [
                 "_DEBUG",
@@ -21,7 +25,11 @@
             "name": "win-arm",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/source/**"
+                "${workspaceFolder}/source/**",
+                "${workspaceFolder}/source/periph/**",
+                "${workspaceFolder}/source/debug_usart1/**",
+                "${workspaceFolder}/source/swo_debug/**",
+                "${workspaceFolder}/source/threads/**"
             ],
             "defines": [
                 "_DEBUG",
