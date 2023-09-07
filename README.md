@@ -6,7 +6,7 @@ https://www.waveshare.com/wiki/Open429I-C
 TODO list:
 - [ ] Migrate from STM32 HAL LVGL port completely [link](https://github.com/Yuribadz/f429_lvgl)
 - [x] Add Debug port printout using PL2302 and USART1 connected to it
-- [ ] Create Debug info with system configuration
+- [x] Create Debug info with system configuration
 - [x] Add O-Zone support
 - [x] Create o-zone script that supports ChibiOS
 - [x] Create c_cpp_properties.json for project Win/Linux
@@ -17,7 +17,7 @@ TODO list:
 - [ ] Create integration script for Squareline studio
 - [ ] Create import script for LVGL ui files
 - [x] Create compatible simulator for LVGL using SDL2 [fork of LVGL port](https://github.com/Yuribadz/lv_port_cmake)
-- [ ] Create Cortex Debug configuration
+- [x] Create Cortex Debug configuration
 - [ ] Many more
 
 ## 1. Installation

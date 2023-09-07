@@ -6,6 +6,11 @@
  */
 
 #include "debug_print.h"
+
+/**
+ * @brief Hz in Mhz
+ * 
+ */
 #define MHZ 1000000U
 
 BaseSequentialStream *dbs = NULL;
@@ -17,7 +22,7 @@ bool init_debug(void)
 	sdStart(&SD1, &config);
 	return HAL_SUCCESS;
 }
-bool print_hal_conf(void)
+void print_hal_conf(void)
 {
 	chprintf(dbs, "Pll Source Clock HSE Frequency %u MHz\r\n",
 		 STM32_PLLSRCCLK / MHZ);
@@ -38,5 +43,4 @@ bool print_hal_conf(void)
 			    STM32_PLLSAIR_VALUE) /
 			   2;
 	chprintf(dbs, "LCD Clock frequency is %u MHz\r\n", lcdFreq);
-	return HAL_SUCCESS;
 }
