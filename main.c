@@ -87,6 +87,7 @@ int main(void)
      * Normal main() thread activity, spawning shells.
      */
 	while (true) {
-		chThdSleepMilliseconds(500);
+		chThdSleepSeconds(5);
+		print_hal_conf();
 	}
 }
