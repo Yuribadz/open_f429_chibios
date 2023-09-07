@@ -1,5 +1,4 @@
 {
-    "lldb.showDisassembly": "auto",
     "lldb.dereferencePointers": true,
     "lldb.consoleMode": "commands",
     "editor.insertSpaces": true,
@@ -12,5 +11,6 @@
             "column": 80,
             "color": "#19c639",
         }
-    ]
+    ],
+    "lldb.displayFormat": "auto"
 }
