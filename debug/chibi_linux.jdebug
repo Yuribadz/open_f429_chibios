@@ -27,7 +27,6 @@ void OnProjectLoad (void) {
   //
 	Project.AddPathSubstitute ("$(HOME)/repo/open_f429_chibios", "$(ProjectDir)");
   Project.SetDevice ("STM32F429IG");
-  Project.SetHostIF ("USB", "261012581");
   Project.SetTargetIF ("SWD");
   Project.SetTIFSpeed ("15 MHz");
   Project.AddSvdFile ("Cortex-M4F.svd");
