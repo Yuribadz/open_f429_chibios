@@ -13,4 +13,5 @@
 /*===========================================================================*/
 #define SHELL_CMD_MEM_ENABLED               FALSE
 
+
 #endif /* CFG_SHELL_CONF_H_ */

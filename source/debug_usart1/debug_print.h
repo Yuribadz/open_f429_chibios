@@ -9,6 +9,7 @@
 #define DEBUG_PRINT_H
 
 #include "ch.h"
+#include "debug_conf.h"
 #include "hal.h"
 #include "chprintf.h"
 
@@ -18,6 +19,13 @@
  * 
  */
 extern BaseSequentialStream *dbs;
+
+#ifdef DEBUG
+#define DEBUG_PRINTF(...) do { chprintf(dbs, __VA_ARGS__); } while(0)
+#else
+/* If not debugging, the macro does nothing */
+#define DEBUG_PRINTF(...) ((void)0)
+#endif
 
 /**
  * @brief Configuration for the USARTV1 Driver of ChibiOS HAL
