@@ -26,14 +26,16 @@
 static THD_WORKING_AREA(waThread1, 128);
 static THD_FUNCTION(Thread1, arg)
 {
-    (void)arg;
-    chRegSetThreadName("blinker1");
-    while (true) {
-        palClearPad(GPIOF, 6U);
-        chThdSleepMilliseconds(500);
-        palSetPad(GPIOF, 6U);
-        chThdSleepMilliseconds(500);
-    }
+	(void)arg;
+	chRegSetThreadName("blinker1");
+	while (true) {
+		palClearPad(GPIOF, 6U);
+        DEBUG_PRINTF("Led_1 OFF\n");
+		chThdSleepMilliseconds(500);
+		palSetPad(GPIOF, 6U);
+        DEBUG_PRINTF("Led_1 ON\n");
+		chThdSleepMilliseconds(500);
+	}
 }
 
 /*
