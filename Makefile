@@ -89,7 +89,10 @@ PROJECT = ch
 MCU  = cortex-m4
 
 # Imported source files and paths.
-CHIBIOS  := ./chibios2111
+CHIBIOS  := ./deps/chibios2111
+TEST     := ./test
+UNITY    := ./deps/Unity
+FFF      := ./deps/fff
 CONFDIR  := ./cfg
 BUILDDIR := ./build
 DEPDIR   := ./.dep
@@ -122,13 +125,15 @@ include $(CHIBIOS)/test/oslib/oslib_test.mk
 include $(CHIBIOS)/os/hal/lib/streams/streams.mk
 include $(CHIBIOS)/os/various/shell/shell.mk
 
+# Include Test framework
+include $(TEST)/test.mk
+
 # Define linker script file here
 LDSCRIPT= STM32F429xI_SDRAM.ld
 
 # C sources that can be compiled in ARM or THUMB mode depending on the global
 # setting.
 CSRC = $(ALLCSRC) \
-       $(TESTSRC) \
        main.c
 
 # C++ sources that can be compiled in ARM or THUMB mode depending on the global
