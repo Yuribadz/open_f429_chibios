@@ -2,6 +2,15 @@
 ##############################################################################
 # Start of Unit Testing with Unity rules
 #
+TEST_PATH = test/
+TEST_BUILD = build/test/out/
+TEST_RUNNERS = build/test/runners/
+TEST_OBJS = build/test/objs/
+TEST_RESULTS = build/test/results/
+TEST_BUILD_PATHS = $(TEST_BUILD) $(TEST_OBJS) $(TEST_RESULTS) $(TEST_RUNNERS)
+# So that we can test both src/ and hal/
+TEST_ROOT = ./
+
 
 $(TEST_BUILD):
 	@mkdir -p $(TEST_BUILD)
