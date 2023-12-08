@@ -1,3 +1,6 @@
+
+#include "swo_print.h"
+
 /*********************************************************************
 *
 *       SWO_PrintChar()
@@ -12,27 +15,25 @@
 * Notes
 *   Additional checks for device specific registers can be added.
 */
-#include "swo_print.h"
-
 void SWO_PrintChar(char c) {
   //
   // Check if ITM_TCR.ITMENA is set
   //
-  if ((ITM_TCR & 1) == 0) {
+  if ((SWO_ReadITM_TCR() & 1) == 0) {
     return;
   }
   //
   // Check if stimulus port is enabled
   //
-  if ((ITM_ENA & 1) == 0) {
+  if ((SWO_ReadITM_ENA() & 1) == 0) {
     return;
   }
   //
   // Wait until STIMx is ready,
   // then send data
   //
-  while ((ITM_STIM_U8 & 1) == 0);
-  ITM_STIM_U8 = c;
+  while ((SWO_ReadITM_STIM_U8() & 1) == 0);
+  SWO_WriteITM_STIM_U8(c);
 }
 
 /*********************************************************************

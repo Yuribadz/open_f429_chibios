@@ -89,7 +89,10 @@ PROJECT = ch
 MCU  = cortex-m4
 
 # Imported source files and paths.
-CHIBIOS  := ./chibios2111
+CHIBIOS  := ./os/chibios2111
+TEST     := ./test
+UNITY    := ./deps/Unity
+FFF      := ./deps/fff
 CONFDIR  := ./cfg
 BUILDDIR := ./build
 DEPDIR   := ./.dep
@@ -128,7 +131,6 @@ LDSCRIPT= STM32F429xI_SDRAM.ld
 # C sources that can be compiled in ARM or THUMB mode depending on the global
 # setting.
 CSRC = $(ALLCSRC) \
-       $(TESTSRC) \
        main.c
 
 # C++ sources that can be compiled in ARM or THUMB mode depending on the global
