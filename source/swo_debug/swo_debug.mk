@@ -1,5 +1,5 @@
-SWODEBUGSRC := $(SOURCEDIR)/swo_debug/swo_print.c
-SWODEBUGINC := $(SOURCEDIR)/swo_debug
+SWODEBUGSRC := $(SOURCEDIR)/swo_debug/src/swo_print.c
+SWODEBUGINC := $(SOURCEDIR)/swo_debug/inc
 
 
 ALLCSRC += $(SWODEBUGSRC)

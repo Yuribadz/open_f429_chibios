@@ -1,19 +1,29 @@
 #include "unity.h"
-#include "main.c"
+#include "swo_print.h"
 
+volatile unsigned int Mock_ITM_STIM_U32;
+volatile char Mock_ITM_STIM_U8;
+volatile unsigned int Mock_ITM_ENA;
+volatile unsigned int Mock_ITM_TCR;
 
 void setUp(void) {
-    // Set up any necessary things before each test
+    ITM_STIM_U32 = 0;
+    ITM_STIM_U8 = 0;
+    ITM_ENA = 0;
+    ITM_TCR = 0;
 }
 
 void tearDown(void) {
-    // Clean up after each test
 }
 
-void test_function_should_doSomething(void) {
+void swo_printchar_registers_not_set(void) {
     // Example test
-    TEST_ASSERT_EQUAL(1, 1);
-    sum();
+    SWO_PrintChar('c');
+}
+
+void swo_printchar_tracecontrol_set(void) {
+    // Example test
+    SWO_PrintChar('c');
 }
 
 int main(void) {
