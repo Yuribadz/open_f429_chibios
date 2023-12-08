@@ -5,20 +5,19 @@
 extern "C" {
 #endif
 
-extern volatile unsigned int Mock_ITM_STIM_U32;
-extern volatile char Mock_ITM_STIM_U8;
-extern volatile unsigned int Mock_ITM_ENA;
-extern volatile unsigned int Mock_ITM_TCR;
+#include <stdint.h>
 
-// Replace hardware macros with mock variables
+extern volatile uint32_t Mock_ITM_STIM_U32;
+extern volatile char Mock_ITM_STIM_U8;
+extern volatile uint32_t Mock_ITM_ENA;
+extern volatile uint32_t Mock_ITM_TCR;
+
 #define ITM_STIM_U32 Mock_ITM_STIM_U32
 #define ITM_STIM_U8  Mock_ITM_STIM_U8
 #define ITM_ENA      Mock_ITM_ENA
 #define ITM_TCR      Mock_ITM_TCR
-
-// Function prototypes remain the same
-void SWO_PrintChar  (char c);
-void SWO_PrintString(const char *s);
+extern void SWO_PrintChar(char c);
+extern void SWO_PrintString(const char *s);
 
 #ifdef __cplusplus
 }
