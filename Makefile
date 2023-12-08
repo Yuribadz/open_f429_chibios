@@ -89,7 +89,7 @@ PROJECT = ch
 MCU  = cortex-m4
 
 # Imported source files and paths.
-CHIBIOS  := ./deps/chibios2111
+CHIBIOS  := ./os/chibios2111
 TEST     := ./test
 UNITY    := ./deps/Unity
 FFF      := ./deps/fff
@@ -124,9 +124,6 @@ include $(CHIBIOS)/test/rt/rt_test.mk
 include $(CHIBIOS)/test/oslib/oslib_test.mk
 include $(CHIBIOS)/os/hal/lib/streams/streams.mk
 include $(CHIBIOS)/os/various/shell/shell.mk
-
-# Include Test framework
-include $(TEST)/test.mk
 
 # Define linker script file here
 LDSCRIPT= STM32F429xI_SDRAM.ld
