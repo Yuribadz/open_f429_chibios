@@ -1,8 +1,7 @@
-#include "unity_fixture.h"
-#include "unity_config.h"
 #include "fff.h"
-
 #include "swo_print.h"
+#include "unity_config.h"
+#include "unity_fixture.h"
 
 TEST_GROUP(SwoDebug);
 volatile unsigned int Mock_ITM_STIM_U32;
@@ -27,7 +26,6 @@ TEST_SETUP(SwoDebug) {
 }
 
 TEST_TEAR_DOWN(SwoDebug) {
-
 }
 
 TEST(SwoDebug, swoPrintPortsNotSetTCRSet) {
@@ -70,13 +68,11 @@ TEST(SwoDebug, swoPrintString) {
     TEST_ASSERT_EQUAL(5, SWO_WriteITM_STIM_U8_fake.call_count);
 }
 
-
-TEST_GROUP_RUNNER(SwoDebug)
-{
-   RUN_TEST_CASE(SwoDebug, swoPrintPortsNotSetTCRSet);
-   RUN_TEST_CASE(SwoDebug, swoPrintPortsNotSetENASet);
-   RUN_TEST_CASE(SwoDebug, swoPrintReadItmSTIM);
-   RUN_TEST_CASE(SwoDebug, swoPrintString);
+TEST_GROUP_RUNNER(SwoDebug) {
+    RUN_TEST_CASE(SwoDebug, swoPrintPortsNotSetTCRSet);
+    RUN_TEST_CASE(SwoDebug, swoPrintPortsNotSetENASet);
+    RUN_TEST_CASE(SwoDebug, swoPrintReadItmSTIM);
+    RUN_TEST_CASE(SwoDebug, swoPrintString);
 }
 
 int main(void) {
