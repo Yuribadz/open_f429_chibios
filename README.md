@@ -40,5 +40,52 @@ TODO list:
 - Unity test framework will be used as unit test for this project
 - fff for component test
 
-## 4. Board peripherials
-### TBD
+## 4. Clock configuration
+### 1. Reference design by ChibiOS port for STM32F429 DISCO
+![Discovery F429 Chibios](doc/img/clock_cfg.jpg)
+
+### 2. Reference design by WaveShare demo
+![Alt text](doc/img/waveshare_config.PNG)
+
+## 5. Board peripherials
+### 1. FMC controller and SDRAM GPIO configuration
+
+FMC GPIO configuration
+| Pin  | FMC Signal   | Mode | Speed  | GPIO Pull-up/Pull-down|
+|------|--------------|------|------- |-----------------------|
+| PD0  | FMC_D2       | AF 12   | 50 Mhz | No pull               |
+| PD1  | FMC_D3       | AF 12   | 50 Mhz | No pull               |
+| PD8  | FMC_D13      | AF 12   | 50 Mhz | No pull               |
+| PD9  | FMC_D14      | AF 12   | 50 Mhz | No pull               |
+| PD10 | FMC_D15      | AF 12   | 50 Mhz | No pull               |
+| PD14 | FMC_D0       | AF 12   | 50 Mhz | No pull               |
+| PD15 | FMC_D1       | AF 12   | 50 Mhz | No pull               |
+| PE0  | FMC_NBL0     | AF 12   | 50 Mhz | No pull               |
+| PE1  | FMC_NBL1     | AF 12   | 50 Mhz | No pull               |
+| PE7  | FMC_D4       | AF 12   | 50 Mhz | No pull               |
+| PE8  | FMC_D5       | AF 12   | 50 Mhz | No pull               |
+| PE9  | FMC_D6       | AF 12   | 50 Mhz | No pull               |
+| PE10 | FMC_D7       | AF 12   | 50 Mhz | No pull               |
+| PE11 | FMC_D8       | AF 12   | 50 Mhz | No pull               |
+| PE12 | FMC_D9       | AF 12   | 50 Mhz | No pull               |
+| PE13 | FMC_D10      | AF 12   | 50 Mhz | No pull               |
+| PE14 | FMC_D11      | AF 12   | 50 Mhz | No pull               |
+| PE15 | FMC_D12      | AF 12   | 50 Mhz | No pull               |
+| PF0  | FMC_A0       | AF 12   | 50 Mhz | No pull               |
+| PF1  | FMC_A1       | AF 12   | 50 Mhz | No pull               |
+| PF2  | FMC_A2       | AF 12   | 50 Mhz | No pull               |
+| PF3  | FMC_A3       | AF 12   | 50 Mhz | No pull               |
+| PF4  | FMC_A4       | AF 12   | 50 Mhz | No pull               |
+| PF5  | FMC_A5       | AF 12   | 50 Mhz | No pull               |
+| PF11 | FMC_NRAS     | AF 12   | 50 Mhz | No pull               |
+| PF12 | FMC_A6       | AF 12   | 50 Mhz | No pull               |
+| PF13 | FMC_A7       | AF 12   | 50 Mhz | No pull               |
+| PF14 | FMC_A8       | AF 12   | 50 Mhz | No pull               |
+| PF15 | FMC_A9       | AF 12   | 50 Mhz | No pull               |
+| PG0  | FMC_A10      | AF 12   | 50 Mhz | No pull               |
+| PG1  | FMC_A11      | AF 12   | 50 Mhz | No pull               |
+| PG8  | FMC_SDCLK    | AF 12   | 50 Mhz | No pull               |
+| PG15 | FMC_NCAS     | AF 12   | 50 Mhz | No pull               |
+| PH7  | FMC_SDCKE1   | AF 12   | 50 Mhz | No pull               |
+| PH6  | FMC_SDNE1    | AF 12   | 50 Mhz | No pull               |
+| PH5  | FMC_SDNWE    | AF 12   | 50 Mhz | No pull               |
