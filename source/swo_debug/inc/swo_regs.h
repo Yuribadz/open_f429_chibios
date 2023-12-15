@@ -1,4 +1,6 @@
 
+#include <stdint.h>
+
 /* Stimulus Port Register word access */
 #define ITM_STIM_U32 (*(volatile unsigned int*)0xE0000000)
 /* Stimulus Port Register word access */
