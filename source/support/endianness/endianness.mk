@@ -1,0 +1,6 @@
+ENDIANNDESSSRC := $(SOURCEDIR)/support/endianness/endianness.c
+ENDIANNDESSINC := $(SOURCEDIR)/support/endianness/
+
+
+ALLCSRC += $(ENDIANNDESSSRC)
+ALLINC  += $(ENDIANNDESSINC)

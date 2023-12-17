@@ -20,7 +20,6 @@
 #include "swo_print.h"
 #include "thread_registry.h"
 
-
 /*
  * Red LED blinker thread, times are in milliseconds.
  */
