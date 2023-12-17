@@ -91,11 +91,9 @@ MCU  = cortex-m4
 # Imported source files and paths.
 CHIBIOS  := ./os/chibios2111
 TEST     := ./test
-UNITY    := ./deps/Unity
-FFF      := ./deps/fff
 CONFDIR  := ./cfg
 BUILDDIR := ./build
-DEPDIR   := ./.dep
+DEPDIR   := ./build/.dep
 SOURCEDIR := ./source
 
 # Licensing files.
@@ -115,6 +113,7 @@ include $(SOURCEDIR)/debug_usart1/debug_usart.mk
 include $(SOURCEDIR)/swo_debug/swo_debug.mk
 include $(SOURCEDIR)/periph/periph.mk
 include $(SOURCEDIR)/threads/threads.mk
+include $(SOURCEDIR)/support/endianness/endianness.mk
 
 # Auto-build files in ./source recursively. DISABLED
 # include $(CHIBIOS)/tools/mk/autobuild.mk
