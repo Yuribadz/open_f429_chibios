@@ -1,7 +1,7 @@
 #include "fff.h"
-#include "swo_print.h"
 #include "unity_config.h"
 #include "unity_fixture.h"
+#include "swo_print.h"
 
 TEST_GROUP(SwoDebug);
 volatile unsigned int Mock_ITM_STIM_U32;
