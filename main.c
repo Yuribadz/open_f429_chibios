@@ -19,7 +19,6 @@
 #include "debug_print.h"
 #include "swo_print.h"
 #include "thread_registry.h"
-#include "endianness.h"
 
 /*
  * Red LED blinker thread, times are in milliseconds.
@@ -30,9 +29,6 @@ static THD_FUNCTION(Thread1, arg)
 	(void)arg;
 	chRegSetThreadName("blinker1");
 	while (true) {
-        uint32_t reversed = 0b1111;
-        reversed = reverseBits(reversed);
-        DEBUG_PRINTF("REVERSED = %u\n", reversed);
 		palClearPad(GPIOF, 6U);
         DEBUG_PRINTF("Led_1 OFF\n");
 		chThdSleepMilliseconds(500);
