@@ -9,16 +9,19 @@ include(CodeCoverage)
 
 APPEND_COVERAGE_COMPILER_FLAGS()
 # Add executable for the tests
-add_subdirectory(unity)
+add_subdirectory(test_config)
 add_subdirectory(fff)
+add_subdirectory(stub)
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}")
 
 add_executable(run_tests swo/test.c)
 
+
 target_link_libraries(run_tests
     Unity
     fff
+    stubs
 )
 target_sources(run_tests
     PRIVATE

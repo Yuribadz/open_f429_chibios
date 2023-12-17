@@ -13,5 +13,5 @@ target_include_directories(Unity PUBLIC
     ${PROJECT_SOURCE_DIR}/test/Unity/src
     ${PROJECT_SOURCE_DIR}/test/Unity/extras/fixture/src
     ${PROJECT_SOURCE_DIR}/test/Unity/extras/memory/src
-    ${PROJECT_SOURCE_DIR}/test/unity
+    ${PROJECT_SOURCE_DIR}/test/test_config
 )

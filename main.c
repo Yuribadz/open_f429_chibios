@@ -20,6 +20,7 @@
 #include "swo_print.h"
 #include "thread_registry.h"
 
+
 /*
  * Red LED blinker thread, times are in milliseconds.
  */
@@ -89,6 +90,5 @@ int main(void)
      */
     while (true) {
         chThdSleepSeconds(5);
-        print_hal_conf();
     }
 }
